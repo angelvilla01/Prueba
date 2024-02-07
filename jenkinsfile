@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone the repo') {
+            steps {
+                echo 'Cloning the repository:'
+                git 'https://github.com/angelvilla01/Prueba.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the ToDo application on Docker'
+                sh 'docker build . -t todo-app'
+            }
+        }
+       
+    }
+}
