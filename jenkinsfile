@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the ToDo application on Docker'
-                sh 'docker build ./prueba -t todo-app'
+                bat 'docker build ./ -t todo-app'
             }
         }
        
